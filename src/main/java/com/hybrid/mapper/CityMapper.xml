@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hybrid.mapper.CityMapper">
+	
+    
+<!--    R :  Read  -->
+	<select id="selectCount" resultType="int">
+	    
+	    select count(*) from city 
+	    
+	</select>
+
+    <select id="selectAll" resultType="com.hybrid.model.City">
+        
+        select  id, 
+				name,
+				countryCode,
+				district, 
+				population
+				
+		   from city
+        
+    </select>
+    
+    
+<!--     mySQL -->
+    <select id="selectPage" 
+        	parameterType="com.hybrid.util.Pagination" 
+        	resultType="com.hybrid.model.City"
+        	databaseId="mysql"> <!-- 이 부분을 추가하여 DB 구분  -->
+        
+        select  id, 
+				name,
+				countryCode,
+				district, 
+				population
+				
+		   from city
+	   order by id desc
+ 	      limit #{start}, #{length}
+        
+    </select>
+    
+    
+<!--     Oracle -->
+    <select id="selectPage" 
+            parameterType="com.hybrid.util.Pagination" 
+            resultType="com.hybrid.model.City"
+            databaseId="oracle"> <!-- 이 부분을 추가하여 DB 구분  -->
+        
+	  select out.*
+		from (
+				select rownum rn, in_.* 
+				  from (
+				  		select * 
+				  		from city 
+				  		order by id desc) in_
+			 ) out
+	<!-- 	where out.rn >= #{firstItem} -->
+	<!-- 	  and out.rn <= #{lastItem} -->
+			where out.rn &gt;= #{firstItem}
+			  and out.rn &lt;=#{lastItem}
+		order by rn	
+        
+    </select>
+    
+    
+        <select id="selectById" parameterType="int" resultType="com.hybrid.model.City">
+        
+		select  id, 
+				name,
+				countryCode,
+				district, 
+				population
+				
+		   from city    
+		  where id = #{id}
+        
+    </select>
+    
+    
+    
+    <select id="selectByCountryCode" parameterType="string" resultType="com.hybrid.model.City">
+        
+		select  id, 
+				name,
+				countryCode,
+				district, 
+				population
+				
+		   from city    
+		  where countrycode = #{countryCode}
+        
+    </select>
+    
+    
+<!--     C : Create  / mysql -->
+    <insert id="insert" 
+        	parameterType="com.hybrid.model.City" 
+        	
+        	useGeneratedKeys="true"
+        	keyProperty="id"
+        	databaseId="mysql"> <!-- 자동 발생한 id를 구하기 위해 use~ & key~ 를 사용  -->
+        
+        insert into city 
+						(
+							name, 
+							countrycode, 
+							district, 
+							population
+							
+						)
+						
+				   values
+						(
+			
+							#{name, jdbcType = VARCHAR}, 
+							#{countryCode, jdbcType = VARCHAR}, 
+							#{district, jdbcType = VARCHAR}, 
+							#{population, jdbcType = NUMERIC} 
+
+						) 
+        
+    </insert>
+    
+
+    <!--     C : Create / oracle -->
+    <insert id="insert" 
+        	parameterType="com.hybrid.model.City" 
+        	databaseId="oracle"> <!-- oracle 에서는 id를 자동 발생시키지 않으므로 use~ & key~를 제거 -->
+        
+        <selectKey keyProperty="id" resultType="int" order="BEFORE">
+            
+            select city_id_generator.nextVal from dual 
+            
+        </selectKey>
+        
+        insert into city 
+						(
+							id,
+							name, 
+							countrycode, 
+							district, 
+							population
+							
+						)
+						
+				   values
+						(
+							#{id, jdbcType = NUMERIC}, 
+							#{name, jdbcType = VARCHAR}, 
+							#{countryCode, jdbcType = VARCHAR}, 
+							#{district, jdbcType = VARCHAR}, 
+							#{population, jdbcType = NUMERIC} 
+
+						) 
+        
+    </insert>
+    
+    
+    
+<!--     U : Update  -->
+
+	<update id="update" parameterType="com.hybrid.model.City">
+	    
+	     update city 
+	    	set name 		= #{name}, 
+	    	    countryCode = #{countryCode}, 
+	    		district  	= #{district}, 
+	    		population	= #{population}
+	    	where id 		= #{id}	
+	    
+	</update>
+	
+	
+<!-- 	D : delete  -->
+
+    <delete id="deleteById" parameterType="int"> 
+	    
+	    delete from city where id = #{id}
+	    
+	</delete>
+
+	<delete id="deleteAll" parameterType="com.hybrid.model.City">
+	    
+	    delete from city
+	    
+	    
+	</delete>
+    
+    
+  
+</mapper>
+
+
+
+
+
+
+
