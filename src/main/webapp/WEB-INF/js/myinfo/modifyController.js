@@ -23,20 +23,20 @@ app.controller('modifyController', function($scope, $http, URL, $routeParams, $l
 	var ajax = $http.get(URL.GET_ITEM_BASE + $routeParams.id); // /member/2000
 	ajax.then(function(value) {
 		console.dir(value);
-		$scope.myinfo = value.data;
+		$scope.member = value.data;
 	}, function(reason) {
-		console.dir(reasone);
+		console.dir(reason);
 		alert("error...");
 	});
 	
 	$scope.submit = function() {
-		var ajax = $http.put(URL.PUT_ITEM_MODIFY_BASE + $scope.myinfo.id, {
-			id 			: $scope.myinfo.id,
-			email 		: $scope.myinfo.email,
-			name 		: $scope.myinfo.name,
-			password 	: $scope.myinfo.password,
-			cmoney	 	: $scope.myinfo.cmoney,
-			coupon	 	: $scope.myinfo.coupon
+		var ajax = $http.put(URL.PUT_ITEM_MODIFY_BASE + $scope.member.id, {
+			id 			: $scope.member.id,
+			email 		: $scope.member.email,
+			name 		: $scope.member.name,
+			password 	: $scope.member.password,
+			address 	: $scope.member.address,
+			phone	 	: $scope.member.phone
 		});
 		
 		ajax.then(function(response) {

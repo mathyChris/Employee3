@@ -60,18 +60,18 @@ public class LoginController {
 	}
 	
 	
-	@RequestMapping(value="/login1.html", method=RequestMethod.GET)
+	@RequestMapping(value="/loginEntre.html", method=RequestMethod.GET)
 	public String getLoginView1() {
 //	public String getLoginView(HttpSession session) {
 
 //		log.info("getLoginView()....");
 //		session.invalidate(); 
 		
-		return "user/login1";		
+		return "user/loginEntre";		
 	}
 	
 	//login 기능에 대해 생성 
-	@RequestMapping(value = "/login1", method = RequestMethod.POST)
+	@RequestMapping(value = "/loginEntre", method = RequestMethod.POST)
 	@ResponseBody
 	public LoginCommand login1(@RequestBody LoginCommand command, HttpSession session) {
 		

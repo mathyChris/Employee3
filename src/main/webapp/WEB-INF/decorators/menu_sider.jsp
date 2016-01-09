@@ -36,13 +36,16 @@
 		ajax.then(function(value) {
 			
 			
-			cpnsole.log("value of login = " + value.data.login); 
+			console.log("value of login = " + value.data.login); 
 			$scope.$parent.loginstatus = value.data.login ; //navController의 parent는 mainController에 해당한다.
 			// login 의 status 상태, true or false 는 browser console에서 확인하면 login 의 값으로 넘어어오기 때문에 value.data.login
 			
-		}); 
-		
-	}); 
+			
+			//// loginstatus 객체 저장 (사이트메시 내에서 체크를 위한 기능)  ////
+			$scope.$parent.member = value.data.member;
+			////////////////////////
+		});
+	});
 
 </script> 
     

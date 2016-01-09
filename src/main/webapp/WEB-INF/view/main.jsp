@@ -20,7 +20,7 @@
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
-
+    <link href="css/font-awesome-animation/dist/font-awesome-animation.min.css" rel="stylesheet" type="text/css">
 
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -158,7 +158,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                                <i class="fa fa-cloud fa-stack-1x text-primary faa-bounce animated"></i>
                             </span>
                                 <h4>
                                     <strong>Weather</strong>
@@ -171,7 +171,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                                <i class="fa fa-compass fa-stack-1x text-primary fa-spin"></i>
                             </span>
                                 <h4>
                                     <strong>My location</strong>
@@ -184,7 +184,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                                <i class="fa fa-flask fa-stack-1x text-primary faa-tada animated"></i>
                             </span>
                                 <h4>
                                     <strong> Drink </strong>
@@ -197,7 +197,7 @@
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                                <i class="fa fa-shield fa-stack-1x text-primary faa-pulse animated"></i>
                             </span>
                                 <h4>
                                     <strong>Bus stop</strong>
@@ -247,7 +247,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a href="/Employee/project/myFavorite/Top 10/Top10 menu.jsp">
                                     <img class="img-portfolio img-responsive" src="img/ourService/coffee.jpg">
                                 </a>
                             </div>
@@ -261,7 +261,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="#">
+                                <a href="/Employee/project/myFavorite/Top 10/Top10 store.jsp">
                                     <img class="img-portfolio img-responsive" src="img/ourService/thumbs-up.jpg">
                                 </a>
                             </div>

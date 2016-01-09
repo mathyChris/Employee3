@@ -1,10 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>   
-
-
+    pageEncoding="UTF-8" session="false"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -24,6 +19,12 @@
     <!-- Custom CSS -->
     <link href="css/heroic-features.css" rel="stylesheet">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
@@ -77,7 +78,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Latest Features</h3>
+                <h3>Restourant List</h3>
             </div>
         </div>
         <!-- /.row -->
@@ -89,10 +90,11 @@
                 <div class="thumbnail">
                     <img src="img/china1/img.jpg" alt="">
                     <div class="caption">
-                        <h3>3MiWon</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>3미원</h3>
+                        <p>주소: 서울특별시 강남구<br>테헤란로27길 25 1층</p>
+                        <p>call: 050-6185-3906</p>
                         <p>
-                            <a href="Chinese_Food1.html" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="Chinese_Food1.jsp" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -103,9 +105,10 @@
                     <img src="img/china2/sk3.jpg" alt="">
                     <div class="caption">
                         <h3>Xingkai</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>주소: 서울시 강남구<br>논현로 508 GS타워 B1</p>
+                        <p>call: 02-2005-1003</p>
                         <p>
-                            <a href="Chinese_Food2.html" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="Chinese_Food2.jsp" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -115,10 +118,11 @@
                 <div class="thumbnail">
                     <img src="img/china3/yg.PNG" alt="">
                     <div class="caption">
-                        <h3>Yeunkyung</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>연경</h3>
+                        <p>주소: 서울특별시 강남구<br>청담동 80-16 </p>
+                        <p>call: 02-549-7843</p>
                         <p>
-                            <a href="Chinese_Food3.html" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="Chinese_Food3.jsp" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>

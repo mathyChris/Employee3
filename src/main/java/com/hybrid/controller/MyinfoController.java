@@ -16,6 +16,7 @@ import com.hybrid.exception.CityRegisterException;
 import com.hybrid.model.City;
 import com.hybrid.model.CityList;
 import com.hybrid.model.CityPage;
+import com.hybrid.model.Member;
 import com.hybrid.model.MemberList;
 import com.hybrid.model.MemberPage;
 import com.hybrid.service.CityDetailService;
@@ -24,15 +25,16 @@ import com.hybrid.service.CityModifyService;
 import com.hybrid.service.CityPageService;
 import com.hybrid.service.CityRegisterService;
 import com.hybrid.service.CityUnRegisterService;
+import com.hybrid.service.MemberDetailService;
 import com.hybrid.service.MemberListService;
 import com.hybrid.service.MemberModifyService;
 import com.hybrid.service.MemberPageService;
+import com.hybrid.service.MemberRegisterService;
 import com.hybrid.service.MemberUnRegisterService;
 import com.hybrid.util.Pagination;
 
 @Controller
 @RequestMapping("/myinfo")
-
 public class MyinfoController {
 	static Log log = LogFactory.getLog(MyinfoController.class);
 
@@ -42,17 +44,20 @@ public class MyinfoController {
 	@Autowired
 	MemberPageService memberPageService;
 	
-//	@Autowired
-//	CityRegisterService cityRegisterService;
-//	
-//	@Autowired
-//	CityDetailService cityDetailService;
-//	
 	@Autowired
-	MemberModifyService memberModifyService;	
+	MemberRegisterService memberRegisterService;
+	
+	@Autowired
+	MemberModifyService memberModifyService;
+	
+	@Autowired
+	MemberDetailService memberDetailService;
+	
+	@Autowired
+	MemberUnRegisterService memberUnRegisterService;
 	
 //	@Autowired
-//	MemberUnRegisterService memberUnRegisterService;
+//	MemberMyinfoService memberMyinfoService;
 	
 	/*
 	 * main.html
@@ -75,21 +80,31 @@ public class MyinfoController {
 	/*
 	 * detail.html
 	 */
-//	@RequestMapping(value="/detail.html", method=RequestMethod.GET)
-//	public String getDetailView() {
-//		log.info("getDetailView()...");
+	@RequestMapping(value="/detail.html", method=RequestMethod.GET)
+	public String getDetailView() {
+		log.info("getDetailView()...");
+		
+		return "myinfo/detail"; 
+	}
+//	
+//	myinfo.html
+//	
+//	@RequestMapping(value="/myinfo.html", method=RequestMethod.GET)
+//	public String getMyinfoView() {
+//		log.info("getMyinfoView()...");
 //		
-//		return "city/detail"; 
+//		return "myinfo/myinfo"; 
 //	}
 	/*
 	 * append.html
 	 */
-//	@RequestMapping(value="/append.html", method=RequestMethod.GET)
-//	public String getAppendView() {
-//		log.info("getAppendView()...");
-//		
-//		return "city/append"; 
-//	}
+	@RequestMapping(value="/append.html", method=RequestMethod.GET)
+	public String getAppendView() {
+		log.info("getAppendView()...");
+		
+		return "myinfo/append"; 
+	}
+	
 	/*
 	 * modify.html
 	 */
@@ -99,15 +114,17 @@ public class MyinfoController {
 		
 		return "myinfo/modify"; 
 	}
+	
 	/*
 	 * delete.html
 	 */
-//	@RequestMapping(value="/delete.html", method=RequestMethod.GET)
-//	public String getDeleteView() {
-//		log.info("getDeleteView()...");
-//		
-//		return "myinfo/delete"; 
-//	}
+	@RequestMapping(value="/delete.html", method=RequestMethod.GET)
+	public String getDeleteView() {
+		log.info("getDeleteView()...");
+		
+		return "myinfo/delete"; 
+	}
+	
 	/*
 	 *  URL_GET_LIST = [/city] or [/city/]
 	 *  Accept = application/json
@@ -115,10 +132,11 @@ public class MyinfoController {
 	@RequestMapping(value={"", "/"}, method=RequestMethod.GET)
 	@ResponseBody
 	public MemberList getMemberAll() {
+
 		log.info("getMemberAll()...");
 		
-		MemberList list = memberListService.getList();
-		
+		MemberList list = memberListService.getList();	
+
 		return list;
 	}
 	
@@ -126,15 +144,29 @@ public class MyinfoController {
 	 * URL_GET_ITEM_BASE = [/city/{id}]
 	 * Accept = application/json
 	 */
-//	@RequestMapping(value="/{id:[0-9]+}", method=RequestMethod.GET)
+	@RequestMapping(value="/{id:[0-9]+}", method=RequestMethod.GET)
+	@ResponseBody
+	public Member getMemberItem(@PathVariable int id) {
+		log.info("getMemberItem()... id=" + id);
+		
+		Member member = memberDetailService.detail(id);
+		
+		return member;
+	}
+
+	//////////////////  사용불가/..ㅠㅠ
+	
+//	@RequestMapping(value="/{email:[0-9]+}", method=RequestMethod.GET)
 //	@ResponseBody
-//	public City getCityItem(@PathVariable int id) {
-//		log.info("getCityItem()... id=" + id);
+//	public Member getMemberemail(@PathVariable String email) {
+//		log.info("getMemberemail()... email=" + email);
 //		
-//		City city = cityDetailService.detail(id);
+//		Member member = memberMyinfoService.myinfo(email);
 //		
-//		return city;
+//		return member;
 //	}
+	
+	//////////////////
 	
 	/*
 	 *  URL_GET_PAGE_BASE = [/city/page/{pageNo}]
@@ -153,22 +185,22 @@ public class MyinfoController {
 	 * 	URL_POST_ITEM_APPEND = [/city] or [/city/]
 	 *  Accept = application/json
 	 */
-//	@RequestMapping(value={"", "/"}, method=RequestMethod.POST)
-//	@ResponseBody
-//	public CityCommand postCityAppend(@RequestBody CityCommand command) {
-//		log.info("postCityAppend()... city id = " + command.getId());
-//		
-//		command.validate();
-//		
-//		if (!command.isValid()) {
-//			// throw 
-//		}
-//		
-//		int id = cityRegisterService.regist(command.getCity());
-//		command.setId(id);
-//		
-//		return command;
-//	}
+	@RequestMapping(value={"", "/"}, method=RequestMethod.POST)
+	@ResponseBody
+	public MemberCommand postMemberAppend(@RequestBody MemberCommand command) {
+		log.info("postMemberAppend()... member id = " + command.getId());
+		
+		command.validate();
+		
+		if (!command.isValid()) {
+			// throw 
+		}
+		
+		int id = memberRegisterService.regist(command.getMember());
+		command.setId(id);
+		
+		return command;
+	}
 	/*
 	 * 	URL_PUT_ITEM_MODIFY = [/city/{id}]
 	 *  Accept = application/json
@@ -183,21 +215,16 @@ public class MyinfoController {
 		
 		return command;
 	}
+	
 	/*
 	 * 	URL_DELETE_ITEM_DELETE = [/city/{id}]
 	 *  Accept = application/json
 	 */
-//	@RequestMapping(value="/{id:[0-9]+}", method=RequestMethod.DELETE)
-//	@ResponseBody
-//	public void deleteMember(@PathVariable int id) {
-//		log.info("deleteMember()... id = " + id);
-//		
-//		memberUnRegisterService.unregist(id);
-//	}
-	
-	
-	
-	
-	
-	
+	@RequestMapping(value="/{id:[0-9]+}", method=RequestMethod.DELETE)
+	@ResponseBody
+	public void deleteMember(@PathVariable int id) {
+		log.info("deleteMember()... id = " + id);
+		
+		memberUnRegisterService.unregist(id);
+	}	
 }

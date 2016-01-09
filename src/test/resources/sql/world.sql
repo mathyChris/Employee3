@@ -214,6 +214,41 @@ select *from country ;
  	limit 40, 10 -- 21번째부터 5개를 가져오겠다는 뜻  		
 --  start , length 
 --  from 0 (index가 0부터 시작)
+
+
+ 	
+--
+--
+--
+
+select * from store ; 
+
+drop table store ; 
+
+create table store (
+ id    int auto_increment,
+ name   varchar(255) not null,
+ restype   varchar(255) not null,
+ district  varchar(255) not null,
+ hitcount  varchar(255) not null,
+ email   varchar(255) not null,
+ password   varchar(255) not null,
+ register_date date,
+ lat    varchar(255) not null,
+ lng    varchar(255) not null,
+ constraint pk_store_id primary key (id)
+) ; 
+
+desc store ; 
+
+
+insert into store
+(name, restype, district, hitcount, email, password, register_date, lat, lng)
+values
+('Tom', 'Italian' ,'gangnam', '10' , 'xxxx@xxxx', '1234', '2016/01/10', '37', '127')
+
+
+
  
   		 
 

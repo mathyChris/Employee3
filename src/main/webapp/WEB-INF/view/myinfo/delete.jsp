@@ -12,7 +12,9 @@
 <body class="container">
 
 <a class="btn btn-primary" href="#/list">list...</a>
-
+		
+		
+		<pre>{{member}}</pre>
 </body>
 </html>
 

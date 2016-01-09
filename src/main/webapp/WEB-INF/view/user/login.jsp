@@ -22,7 +22,7 @@
 <c:url var="LOGIN_URL" value="/user/login"/>
 <%-- <c:url var="REDIRECT_URL" value="/city/main.html"/> <!-- 성공 시 main으로 이동 --> --%>
 <%-- <c:url var="REDIRECT_URL" value="/member/main.html"/> --%>
-<c:url var="REDIRECT_URL" value="/myinfo/main.html"/>
+<c:url var="REDIRECT_URL" value="/member/main.html"/>
 
 
 <script type="text/javascript">
@@ -116,7 +116,7 @@
 				
 				console.dir(reason); 
 				$scope.error = reason.data ; 
-				
+	
 			}); 
 			
 		}
@@ -198,8 +198,9 @@
                                 		
                             </fieldset>
                         </form>
-                        
-                        <button><a href="login1.html">Member</a> </button>
+                        <p>
+                        <button> <a href="login.html"> Store (admin)</a> </button>
+                        <button> <a href="../store/append.html"> Append</a> </button>
                         
                     </div>
                 </div>

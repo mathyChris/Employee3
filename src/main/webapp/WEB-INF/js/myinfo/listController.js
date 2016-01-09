@@ -15,12 +15,14 @@ app.config(function($routeProvider) {
 app.controller('listController', function($scope, $http, URL) {
 	console.log("listController...");
 	console.log("URL.GET_PAGE_BASE = " + URL.GET_PAGE_BASE);
+
 	
-	$scope.$parent.title = "List Member View";
+	$scope.$parent.title = "";
 	
 	$scope.pageNo = 1;
 	$scope.members = [];
 	$scope.paging = {};
+
 	
 	$scope.selectPage = function() {
 		$http.get(URL.GET_PAGE_BASE + $scope.pageNo).success(function(data, status, headers, config) {

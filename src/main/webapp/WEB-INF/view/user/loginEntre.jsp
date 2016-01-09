@@ -21,8 +21,8 @@
 <!-- url 을 처리하는 부분   -->
 <c:url var="LOGIN_URL" value="/user/login"/>
 <%-- <c:url var="REDIRECT_URL" value="/city/main.html"/> <!-- 성공 시 main으로 이동 --> --%>
-<c:url var="REDIRECT_URL" value="/member/main.html"/>
-<%-- <c:url var="REDIRECT_URL" value="/myinfo/main.html"/> --%>
+<%-- <c:url var="REDIRECT_URL" value="/member/main.html"/> --%>
+<c:url var="REDIRECT_URL" value="/store/main.html"/>
 
 
 <script type="text/javascript">
@@ -198,8 +198,9 @@
                                 		
                             </fieldset>
                         </form>
-                        
-                        <button> <a href="login.html"> Mypage</a> </button>
+                        <p>
+                        <button> <a href="login.html"> Member (admin)</a> </button>
+                        <button> <a href="../store/append.html"> Append</a> </button>
                         
                     </div>
                 </div>

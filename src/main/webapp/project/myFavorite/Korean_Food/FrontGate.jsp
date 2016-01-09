@@ -1,9 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>   
-
+    pageEncoding="UTF-8" session="false"%>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -15,7 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Heroic Features - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
@@ -83,7 +78,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Latest Features</h3>
+                <h3>Restourant List</h3>
             </div>
         </div>
         <!-- /.row -->
@@ -95,10 +90,11 @@
                 <div class="thumbnail">
                     <img src="img/korea1/gg.jpg" alt="">
                     <div class="caption">
-                        <h3>mysoolim</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>금강수림</h3>
+                        <p>주소: 서울특별시 강남구<br>도곡동 953-1 SK허브프리모 B2층</p>
+                        <p>call: 02-577-9992</p>
                         <p>
-                            <a href="Korean_Food1.html" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="Korean_Food1.jsp" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -108,10 +104,11 @@
                 <div class="thumbnail">
                     <img src="img/korea2/zh5.jpg" alt="">
                     <div class="caption">
-                        <h3>ZihoFood</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>지호한방삼계탕</h3>
+                        <p>주소: 서울특별시 강남구<br>삼성동 76-13</p>
+                        <p>call: 02-512-7283</p>
                         <p>
-                            <a href="Korean_Food2.html" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="Korean_Food2.jsp" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
@@ -121,10 +118,11 @@
                 <div class="thumbnail">
                     <img src="img/korea3/sw5.jpg" alt="">
                     <div class="caption">
-                        <h3>SamwonGarden</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <h3>삼원가든</h3>
+                        <p>주소: 서울특별시 강남구<br>신사동 623-5</p>
+                        <p>call: 02-548-3030</p>
                         <p>
-                            <a href="Korean_Food3.html" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
+                            <a href="Korean_Food3.jsp" class="btn btn-primary">Go Now!</a> <a href="#" class="btn btn-default">More Info</a>
                         </p>
                     </div>
                 </div>
