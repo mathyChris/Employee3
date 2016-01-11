@@ -29,7 +29,8 @@ public class LoginController {
 
 	@Autowired
 	LoginService loginService;
-
+	
+	
 	/*
 	 * login.html
 	 */
@@ -57,23 +58,28 @@ public class LoginController {
 		session.setAttribute("member", member);
 
 		return command;
-	}
+	}	
 	
 	
-	@RequestMapping(value="/loginEntre.html", method=RequestMethod.GET)
-	public String getLoginView1() {
+	
+	
+	/*
+	 * login.html
+	 */
+	@RequestMapping(value="/loginMyInfo.html", method=RequestMethod.GET)
+	public String getLoginView2() {
 //	public String getLoginView(HttpSession session) {
 
 //		log.info("getLoginView()....");
 //		session.invalidate(); 
 		
-		return "user/loginEntre";		
+		return "myinfo/login";		
 	}
 	
 	//login 기능에 대해 생성 
-	@RequestMapping(value = "/loginEntre", method = RequestMethod.POST)
+	@RequestMapping(value = "/loginMyInfo", method = RequestMethod.POST)
 	@ResponseBody
-	public LoginCommand login1(@RequestBody LoginCommand command, HttpSession session) {
+	public LoginCommand login2(@RequestBody LoginCommand command, HttpSession session) {
 		
 		log.info("email = " + command.getEmail());
 		log.info("password = " + command.getPassword());
@@ -88,6 +94,94 @@ public class LoginController {
 	
 	
 	
+
+	/*
+	 * login.html
+	 */
+	@RequestMapping(value="/loginMember.html", method=RequestMethod.GET)
+	public String getLoginView3() {
+//	public String getLoginView(HttpSession session) {
+
+//		log.info("getLoginView()....");
+//		session.invalidate(); 
+		
+		return "member/login";		
+	}
+	
+	//login 기능에 대해 생성 
+	@RequestMapping(value = "/loginMember", method = RequestMethod.POST)
+	@ResponseBody
+	public LoginCommand login3(@RequestBody LoginCommand command, HttpSession session) {
+		
+		log.info("email = " + command.getEmail());
+		log.info("password = " + command.getPassword());
+
+		Member member = loginService.login(command.getEmail(), command.getPassword());
+		
+		session.setAttribute("login", true);
+		session.setAttribute("member", member);
+
+		return command;
+	}
+	
+	
+	@RequestMapping(value="/loginEntre.html", method=RequestMethod.GET)
+	public String getLoginView4() {
+//	public String getLoginView(HttpSession session) {
+
+//		log.info("getLoginView()....");
+//		session.invalidate(); 
+		
+		return "store/login";		
+	}
+	
+	//login 기능에 대해 생성 
+	@RequestMapping(value = "/loginEntre", method = RequestMethod.POST)
+	@ResponseBody
+	public LoginCommand login4(@RequestBody LoginCommand command, HttpSession session) {
+		
+		log.info("email = " + command.getEmail());
+		log.info("password = " + command.getPassword());
+
+		Member member = loginService.login(command.getEmail(), command.getPassword());
+		
+		session.setAttribute("login", true);
+		session.setAttribute("member", member);
+
+		return command;
+	}
+	
+	
+	///////////////////////////////
+	
+	@RequestMapping(value="/loginTemplate.html", method=RequestMethod.GET)
+	public String getLoginView5() {
+//	public String getLoginView(HttpSession session) {
+
+//		log.info("getLoginView()....");
+//		session.invalidate(); 
+		
+		return "user/loginTemplate";		
+	}
+	
+	//login 기능에 대해 생성 
+	@RequestMapping(value = "/loginTemplate", method = RequestMethod.POST)
+	@ResponseBody
+	public LoginCommand login5(@RequestBody LoginCommand command, HttpSession session) {
+		
+		log.info("email = " + command.getEmail());
+		log.info("password = " + command.getPassword());
+
+		Member member = loginService.login(command.getEmail(), command.getPassword());
+		
+		session.setAttribute("login", true);
+		session.setAttribute("member", member);
+
+		return command;
+	}	
+	
+	
+	
 	
 	
 	// logout 기능 구현 
@@ -98,8 +192,10 @@ public class LoginController {
 		
 		session.invalidate();
 		
-		return "redirect:/user/login.html"; // redirect 를 사용하면 logout 한 후에 설정한  URL 경로로 다시 접속한다. 
+//		return "redirect:/user/login.html"; // redirect 를 사용하면 logout 한 후에 설정한  URL 경로로 다시 접속한다. 
 //		return "redirect:/city/main.html" ; 
+		return "redirect:/user/login.html";
+	
 	}
 	
 	
@@ -141,3 +237,9 @@ public class LoginController {
 	}
 
 }
+
+
+
+
+
+

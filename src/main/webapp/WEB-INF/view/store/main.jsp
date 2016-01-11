@@ -23,6 +23,7 @@
 <c:url var="URL_PUT_ITEM_MODIFY_BASE" 		value="/store/"/>		<%-- /city/{id} --%>
 
 <c:url var="URL_DELETE_ITEM_DELETE_BASE" 	value="/store/"/>		<%-- /city/{id} --%>
+<c:url var="URL_LOGIN" 	value="/store/"/>
 
 
 <script type="text/javascript">
@@ -38,8 +39,10 @@
 			PUT_LIST_MODIFY :			"${URL_PUT_LIST_MODIFY}",
 			PUT_ITEM_MODIFY_BASE :		"${URL_PUT_ITEM_MODIFY_BASE}",
 			
-			DELETE_ITEM_DELETE_BASE :	"${URL_DELETE_ITEM_DELETE_BASE}"
+			DELETE_ITEM_DELETE_BASE :	"${URL_DELETE_ITEM_DELETE_BASE}",
+			LOGIN :						"${URL_LOGIN}"
 	};
+	
 	var deps = ['ngRoute',
 	            'ngAnimate',
 	            'ngTouch',
@@ -77,12 +80,14 @@
 <c:url var="appendController" value="/js/store/appendController.js"/>
 <c:url var="modifyController" value="/js/store/modifyController.js"/>
 <c:url var="deleteController" value="/js/store/deleteController.js"/>
+<%-- <c:url var="loginController" value="/js/store/loginController.js"/> --%>
 
 <script type="text/javascript" src="${listController}"></script>
 <script type="text/javascript" src="${detailController}"></script>
 <script type="text/javascript" src="${appendController}"></script>
 <script type="text/javascript" src="${modifyController}"></script>
 <script type="text/javascript" src="${deleteController}"></script>
+<%-- <script type="text/javascript" src="${loginController}"></script> --%>
 
 </head>
 <body data-ng-controller="mainController" class="container">

@@ -82,7 +82,7 @@
 					   required="required"
 					   data-ng-model="member.password"
 					   data-ng-maxlength="7"
-					   data-ng-minlength="1"
+					   data-ng-minlength="7"
 					   />
 				<div>memberForm.password.$invalid = {{memberForm.password.$invalid}}</div>
 				<div>memberForm.password.$error.required = {{memberForm.password.$error.required}}</div>

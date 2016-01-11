@@ -7,11 +7,13 @@
   <!-- Map decorators to path patterns. -->
  	  <mapping path="/city/main.html" decorator="/WEB-INF/decorators/menu.jsp"/>
  	  <mapping path="/country/main.html" decorator="/WEB-INF/decorators/menu.jsp"/>
+ 	  
  	  <mapping path="/member/main.html" decorator="/WEB-INF/decorators/menu.jsp"/>
  	  <mapping path="/store/main.html" decorator="/WEB-INF/decorators/menu.jsp"/>
  	  <mapping path="/myinfo/main.html" decorator="/WEB-INF/decorators/menu.jsp"/>
+ 	  <mapping path="/myStoreInfo/main.html" decorator="/WEB-INF/decorators/menu.jsp"/>
  	  
- 	  <mapping path="/user/login.html" decorator="/WEB-INF/decorators/menu.jsp"/>
+ 	  <mapping path="/user/loginMember.html" decorator="/WEB-INF/decorators/menu.jsp"/>
  	  <mapping path="/user/loginEntre.html" decorator="/WEB-INF/decorators/menu.jsp"/>
  	 
 <!--   <mapping path="/*.special.jsp" decorator="/special-decorator.html"/> -->
@@ -32,9 +34,16 @@
  	  <mapping path="/city/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
  	  <mapping path="/country/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
  	  <mapping path="/member/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
- 	  <mapping path="/store/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
+<!--  	  <mapping path="/store/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/> -->
  	  <mapping path="/myinfo/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
+<!--  	  <mapping path="/myStoreInfo/main.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/> -->
  	  
-	  <mapping path="/user/login.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
+ 	  <mapping path="/user/login.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
+	  <mapping path="/user/loginMember.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
 	  <mapping path="/user/loginEntre.html" decorator="/WEB-INF/decorators/menu_sider.jsp"/>
 </sitemesh>
+
+
+
+
+

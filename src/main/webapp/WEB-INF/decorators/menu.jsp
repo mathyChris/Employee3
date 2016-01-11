@@ -14,6 +14,41 @@
 <title><sitemesh:write property='title'/></title>
 
     <sitemesh:write property='head'/>
+    
+
+<c:url var="menu_sider" value="/css/menu_sider.css"/>
+<c:url var="menu_sider_js" value="/js/menu_sider.js"/>
+
+    
+<link rel="stylesheet" href="${menu_sider}">
+<script type="text/javascript" src="${menu_sider_js}"></script>  
+
+
+<!-- navController로 옮긴다. parent nav(navigator)는 mainController 이다.  -->
+<script type="text/javascript">
+	
+	app.controller("navController", function($scope, $http){
+		
+		//logincheck... LoginController에서 가져온다.
+		var ajax = $http.get("<c:url value="/store/logincheck" />");
+		ajax.then(function(value) {
+			
+			
+			console.log("value of login = " + value.data.login); 
+			$scope.$parent.loginstatus = value.data.login ; //navController의 parent는 mainController에 해당한다.
+			// login 의 status 상태, true or false 는 browser console에서 확인하면 login 의 값으로 넘어어오기 때문에 value.data.login
+			//// loginstatus 객체 저장 (사이트메시 내에서 체크를 위한 기능)  ////
+			
+			$scope.$parent.member = value.data.member;
+			$scope.$parent.store = value.data.store ; 
+			
+			////////////////////////
+		});
+	});
+
+</script>     
+    
+    
 
 </head>
 
@@ -24,7 +59,7 @@
     
 <!--       <nav class="navbar navbar-default navbar-fixed-top"> -->
 
-<nav class="navbar navbar-default {{StaticOrFixed}}">
+<nav data-ng-controller="navController" class="navbar navbar-default {{StaticOrFixed}}">
     
       <div class="container-fluid">
         <div class="navbar-header">
@@ -34,13 +69,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Project name</a>
+          <a class="navbar-brand" href="#">Find your zagat</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
+            <li class="active"><a href="/Employee/main.html">Home</a></li>
+            <li><a href="/Employee/main.html#service">Service</a></li>
+            <li><a href="/Employee/main.html#contact">Contact</a></li>
             
             <li><a href="/Employee/city/main.html">City</a></li>
             <li><a href="/Employee/country/main.html">Country</a></li>

@@ -49,11 +49,11 @@ create table member (
 insert into member
 (email, name, password, register_date, address, phone)
 values
+('xxxx@xxxx', 'Hong', '1234', '2015/11/09', 'Seoul,Gangnam', '010-555-5555')
+
 ('xxxx@zzzz', 'Ang', '1234', '2016/01/10', 'Seoul,Gangnam', '010-555-6666')
 
 ('xxxx@yyyy', 'Chung', '1234', '2016/01/07', 'Seoul,Gangnam', '010-555-4444')
-
-('xxxx@xxxx', 'Hong', '1234', '2015/11/09', 'Seoul,Gangnam', '010-555-5555')
 
 -- read 에 해당 
 select *from member ;

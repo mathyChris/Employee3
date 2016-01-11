@@ -19,10 +19,10 @@
 
 
 <!-- url 을 처리하는 부분   -->
-<c:url var="LOGIN_URL" value="/user/login"/>
+<c:url var="LOGIN_URL" value="/store/login"/>
 <%-- <c:url var="REDIRECT_URL" value="/city/main.html"/> <!-- 성공 시 main으로 이동 --> --%>
 <%-- <c:url var="REDIRECT_URL" value="/member/main.html"/> --%>
-<c:url var="REDIRECT_URL" value="/member/main.html"/>
+<c:url var="REDIRECT_URL" value="/myinfo/main.html"/>
 
 
 <script type="text/javascript">
@@ -129,15 +129,16 @@
 </head>
 
 <body data-ng-controller="mainController" class="container">
-		{{loginstatus}}
+<!-- 		{{loginstatus}} -->
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title">Please Sign In</h3><br><br>
                         
-                        <pre>{{login}}</pre>
-                        <pre>{{error.message}}</pre>
+<!--                         <pre>{{login}}</pre> -->
+<!--                         <pre>{{error.message}}</pre> -->
+
                     </div>
                     <div class="panel-body">
                         <form name="loginForm" novalidate="novalidate" data-ng-submit="submit()">
@@ -193,14 +194,14 @@
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" 
-                                		class="btn btn-lg btn-success"
+                                		class="btn btn-lg btn-success btn-block"
                                 		data-ng-disabled="loginForm.$invalid">Login</button>
                                 		
                             </fieldset>
                         </form>
-                        <p>
-                        <button> <a href="login.html"> Store (admin)</a> </button>
-                        <button> <a href="../store/append.html"> Append</a> </button>
+                        <br>
+                        <a href="/Employee/myStoreInfo/login.html" class="btn btn-sm btn-success"> to Entrepreneur (to 사업자)</a>
+                        <a href="/Employee/member/main.html#/append" class="btn btn-sm btn-success"> Append (회원 가입)</a>
                         
                     </div>
                 </div>

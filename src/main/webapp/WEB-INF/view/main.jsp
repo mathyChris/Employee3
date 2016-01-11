@@ -61,6 +61,9 @@
                 <a href="#map" onclick = $("#menu-close").click(); >Map</a>
             </li>
             
+             <li>
+                <a href="/Employee/myinfo/login.html" onclick = $("#menu-close").click(); >Login</a>
+            </li>
             
             <li>
                 <a href="#information" onclick = $("#menu-close").click(); >My Info.</a>
@@ -81,6 +84,11 @@
             <li>
                 <a href="#contact" onclick = $("#menu-close").click(); >Contact</a>
             </li>
+            
+             <li>
+                <a href="/Employee/member/login.html" onclick = $("#menu-close").click(); >Admin_login</a>
+            </li>
+            
         </ul>
     </nav>
 
@@ -203,7 +211,8 @@
                                     <strong>Bus stop</strong>
                                 </h4>
                                 <p> Find your Bus Info.</p>
-                                <a href="#" class="btn btn-light">Learn More</a>
+                                <a href="/Employee/project/busStop/dsv3.html" class="btn btn-light">Learn More</a>
+                                
                             </div>
                         </div>
                     </div>
@@ -240,7 +249,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="portfolio-item">
-                                <a href="/Employee/user/login.html">
+                                <a href="/Employee/myinfo/login.html">
                                     <img class="img-portfolio img-responsive" src="img/ourService/login.jpg">
                                 </a>
                             </div>
@@ -337,7 +346,8 @@
                 <div class="col-lg-12 text-center">
                 	
                  <h2>Stylish members, on the shining ship floating in the golden river  . . .  </h2>
-                    <p class="lead">These members are ...  <a target="_blank" href="http://join.deathtothestockphoto.com/"> More info. Press Here . . .</a>.</p>
+<!--                     <p class="lead">These members are ...  <a target="_blank" href="http://join.deathtothestockphoto.com/"> More info. Press Here . . .</a>.</p>  -->
+                	<p class="lead">These members are ...  <a target="_blank" href="/Employee/memberRound.html"> More info. Press Here . . .</a>.</p> 
                 	<br>
                 		        <iframe width="100%" height="1000px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="memberRound.html">
 						       		 <br />
@@ -368,14 +378,17 @@
             </div>
         </div>
     </aside>
-    
+      
     
     <!-- Map -->
     <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="/Employee/project/contact/company.html"></iframe>
+<!--         /Employee/project/contact/company.html -->
         <br />
         <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+            <a href="/Employee/project/contact/company.html"></a>
+<!--         	<a href="https://www.google.co.kr/maps/place/37%C2%B029'58.5%22N+127%C2%B001'49.7%22E/@37.49957,127.0299228,19z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0?hl=ko"></a> -->
+<!--         	https://www.google.co.kr/maps/place/37%C2%B029'58.5%22N+127%C2%B001'49.7%22E/@37.49957,127.0299228,19z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0?hl=ko -->
         </small>
         </iframe>
     </section>
@@ -388,10 +401,10 @@
                 <div class="col-lg-10 col-lg-offset-1 text-center">
                     <h4><strong> Find your zagat</strong>
                     </h4>
-                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <p>649-5 Yoksam-dong<br>Gangnam-gu, Seoul, Republic of Korea</p> <p>서울특별시 강남구 역삼1동 649-5</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        <li><i class="fa fa-phone fa-fw"></i> (02) 459-7890</li>
+                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:wisemathy@naver.com">GoldenRiver@Investment.com</a>
                         </li>
                     </ul>
                     <br>

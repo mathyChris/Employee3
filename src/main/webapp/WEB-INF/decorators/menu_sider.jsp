@@ -31,18 +31,19 @@
 	app.controller("navController", function($scope, $http){
 		
 		//logincheck... LoginController에서 가져온다.
-		
 		var ajax = $http.get("<c:url value="/user/logincheck" />");
+// 		var ajax = $http.get("<c:url value="/store/logincheck" />");
 		ajax.then(function(value) {
 			
 			
 			console.log("value of login = " + value.data.login); 
 			$scope.$parent.loginstatus = value.data.login ; //navController의 parent는 mainController에 해당한다.
 			// login 의 status 상태, true or false 는 browser console에서 확인하면 login 의 값으로 넘어어오기 때문에 value.data.login
-			
-			
 			//// loginstatus 객체 저장 (사이트메시 내에서 체크를 위한 기능)  ////
+			
 			$scope.$parent.member = value.data.member;
+			$scope.$parent.store = value.data.store ; 
+			
 			////////////////////////
 		});
 	});
@@ -68,7 +69,7 @@
                    <span class="icon-bar"></span>
                    <span class="icon-bar"></span>
                </button>
-               <a class="navbar-brand" href="index.html">Employee</a>
+               <a class="navbar-brand" href="/Employee/main.html">Find your zagat</a>
            </div>
            <!-- /.navbar-header -->
 
@@ -302,7 +303,7 @@
                            <!-- /input-group -->
                        </li>
                        <li>
-                           <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                           <a href="/Employee/main.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
                        </li>
                        <li>
                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> World<span class="fa arrow"></span></a>
@@ -322,7 +323,7 @@
                            <a href="#"> <i class="fa fa-table fa-fw"></i> Tables</a>
                        </li>
                        <li>
-                           <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
+                           <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Q&A</a>
                        </li>
                        <li>
                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
@@ -357,35 +358,38 @@
                                <li>
                                    <a href="#">Second Level Item</a>
                                </li>
-                               <li>
-                                   <a href="#">Third Level <span class="fa arrow"></span></a>
-                                   <ul class="nav nav-third-level">
-                                       <li>
-                                           <a href="#">Third Level Item</a>
-                                       </li>
-                                       <li>
-                                           <a href="#">Third Level Item</a>
-                                       </li>
-                                       <li>
-                                           <a href="#">Third Level Item</a>
-                                       </li>
-                                       <li>
-                                           <a href="#">Third Level Item</a>
-                                       </li>
-                                   </ul>
-                                   <!-- /.nav-third-level -->
+                                <li>
+                                   <a href="#">Second Level Item</a>
                                </li>
+<!--                                <li> -->
+<!--                                    <a href="#">Third Level <span class="fa arrow"></span></a> -->
+<!--                                    <ul class="nav nav-third-level"> -->
+<!--                                        <li> -->
+<!--                                            <a href="#">Third Level Item</a> -->
+<!--                                        </li> -->
+<!--                                        <li> -->
+<!--                                            <a href="#">Third Level Item</a> -->
+<!--                                        </li> -->
+<!--                                        <li> -->
+<!--                                            <a href="#">Third Level Item</a> -->
+<!--                                        </li> -->
+<!--                                        <li> -->
+<!--                                            <a href="#">Third Level Item</a> -->
+<!--                                        </li> -->
+<!--                                    </ul> -->
+                                   <!-- /.nav-third-level -->
+<!--                                </li> -->
                            </ul>
                            <!-- /.nav-second-level -->
                        </li>
                        <li class="active">
-                           <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                           <a href="#"><i class="fa fa-files-o fa-fw"></i> Map Pages<span class="fa arrow"></span></a>
                            <ul class="nav nav-second-level">
                                <li>
-                                   <a class="active" href="blank.html">Blank Page</a>
+                                   <a class="active" href="blank.html"> Map type</a>
                                </li>
                                <li>
-                                   <a href="login.html">Login Page</a>
+                                   <a href="login.html"> Map type2</a>
                                </li>
                            </ul>
                            <!-- /.nav-second-level -->

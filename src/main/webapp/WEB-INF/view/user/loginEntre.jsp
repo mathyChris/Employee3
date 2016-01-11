@@ -199,7 +199,7 @@
                             </fieldset>
                         </form>
                         <p>
-                        <button> <a href="login.html"> Member (admin)</a> </button>
+                        <button> <a href="loginMember.html"> Member (admin)</a> </button>
                         <button> <a href="../store/append.html"> Append</a> </button>
                         
                     </div>

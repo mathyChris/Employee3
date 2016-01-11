@@ -1,138 +1,95 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8" session="false" trimDirectiveWhitespaces="true"%>
+    pageEncoding="UTF-8" session="false" trimDirectiveWhitespaces="true"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<%@ taglib prefix="j" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>    
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ko">
 <head>
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-
-
-
-<title></title>
-
-<!-- Bootstrap Core CSS -->
-<link href="../../css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom CSS -->
-<link href="../../css/business-frontpage.css" rel="stylesheet">
-
-<!-- jQuery -->
-<script src="../../js/jquery.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="../../js/bootstrap.min.js"></script>
-
-
-
 </head>
-
 <body class="container">
 
-	<!-- Myinfo line -->
-		<div class="row">
-			<div class="col-sm-7">
-
-				<h2>내정보</h2>
-			
-				<pre>{{loginstatus}}</pre>
-				<table>
-					<tr><td>메일주소</td><td>{{member.email}}</td></tr>
-					<tr><td>이름</td><td>{{member.name}}</td></tr>
-					<tr><td>주소</td><td>{{member.address}}</td></tr>
-					<tr><td>전화번호</td><td>{{member.phone}}</td></tr>
-				</table>
-				
-
-				<a href="#/detail/{{member.id}}" class="btn btn-info">{{member.id}}</a>
-				<a href="#/modify/{{member.id}}" class="btn btn-success">Edit...</a>
-				<a href="#/delete/{{member.id}}" class="btn btn-info">Delete...</a>
-				<a href="#/append" class="btn btn-primary">Append</a>		
-					
-			</div>
-
-		</div>
-
-
-		<hr>
-		<!-- contents page -->
-		<div class="row">
-		
-				<div class="col-sm-4">
-					<a href="#/modify/{{member.id}}">
-					<img class="img-circle img-responsive img-center"
-						src="http://placehold.it/160x160" alt=""></a>
-					<h2>정보수정</h2>
-					<p> 개인정보를 수정할수 있습니다. 주소 및 전화번호 기타 변경가능</p>
-				</div>
-				
-				<div class="col-sm-4">
-					<img class="img-circle img-responsive img-center"
-						src="http://placehold.it/160x160" alt="">
-					<h2>쿠폰 구매</h2>
-					<p>현재 구매가능한 쿠폰목록을 보실수 있습니다</p>
-				</div>
-						
-				<div class="col-sm-4">
-					<img class="img-circle img-responsive img-center"
-						src="http://placehold.it/160x160" alt="">
-					<h2>캐쉬 보관함</h2>
-					<p> 보유하고있는 캐쉬를 확인 하실수 있습니다</p>
-				</div>
-				
-				<div class="col-sm-4">
-					<a href="#/delete/{{member.id}}">
-					<img class="img-circle img-responsive img-center"
-						src="http://placehold.it/160x160" alt=""></a>
-					<h2>회원 탈퇴</h2>
-					<p>탈퇴된 회원정보는 기록되지 않으며 바로 삭제됩니다</p>
-				</div>
-				
-				<div class="col-sm-4">
+<div class="table-responsive">
+	<ul class="pagination">
+		<li><a href="" data-ng-click="prevClick(paging.firstPage - 1)">Prev</a></li>
+		<li data-ng-repeat="city in citys">
+			<a href="" data-ng-click="pageClick(paging.firstPage + $index)">{{paging.firstPage + $index}}</a>
+		</li>
+		<li><a href="" data-ng-click="prevClick(paging.lastPage + 1)">Next</a></li>
+	</ul>
 	
-					<img class="img-circle img-responsive img-center"
-						src="http://placehold.it/160x160" alt="">
-					<h2>미정</h2>
-					<p>탈퇴된 회원정보는 기록되지 않으며 바로 삭제됩니다</p>
-				</div>
-				
-				<div class="col-sm-4">	
-					<img class="img-circle img-responsive img-center"
-						src="http://placehold.it/160x160" alt="">
-					<h2>미정</h2>
-					<p>탈퇴된 회원정보는 기록되지 않으며 바로 삭제됩니다</p>
-				</div>
-		</div>
+	<table class="table table-striped table-hover">
+		<thead>
+<!-- 			<tr><td><a href="#/append" class="btn btn-primary">Append</a></td></tr> -->
+<!-- 			<tr><th colspan="8"> -->
+<!-- 				<div data-uib-pagination  -->
+<!-- 					 data-total-items="paging.totalItem" style="width:800px;"  -->
+<!-- 					 data-ng-model="pageNo" -->
+<!-- 					 data-max-size="10" -->
+<!-- 					 data-ng-change="selectPage()" -->
+<!-- 					 data-boundary-links="true"> -->
+<!-- 				</div> -->
+<!-- 				</th> -->
+<!-- 			</tr> -->
+			<tr>
+				<th>No</th>
+				<th>ID</th>
+				<th>email</th>
+				<th>name</th>
+				<th>password</th>
+				<th>register_Date</th>
+				<th>address</th>
+				<th>phone</th>				
+				<th>수정</th>
+				<th>삭제</th>
+			</tr>
+		</thead>
+		<tbody>
+<!-- 			<tr data-ng-repeat="member in members"> -->
+				<tr>
+				<td>{{$index + 1}}</td>
+				<td><a href="#/detail/{{member.id}}">{{member.id}}</a></td>
+				<td>{{member.email}}</td>
+				<td>{{member.name}}</td>
+				<td>{{member.password}}</td>
+				<td>{{member.register_Date}}</td>
+				<td>{{member.address}}</td>
+				<td>{{member.phone}}</td>
 			
-		<!-- /.row -->
+				<td><a href="#/modify/{{member.id}}" class="btn btn-success">Edit...</a></td>
+				<td><a href="#/delete/{{member.id}}" class="btn btn-info">Delete...</a></td>
+			</tr>
+		</tbody>
+		
+<!-- 		 <div class="col" data-ng-repeat="member in members">             -->
+			<div class="col">
+            <div class="col-lg-4 col-sm-6 text-center">
+                <a href="http://localhost:8080/Employee2/Korean_Food/FrontGate.jsp"><img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt=""></a>
+                <h4>id: <small>{{member.id}}</small></h4>
+                <h4>email: <small>{{member.email}}</small></h4>
+                <h4>name: <small>{{member.name}}</small></h4>
+                <h4>password: <small>{{member.password}}</small></h4>
+                <h4>register_Date: <small>{{member.register_Date}}</small></h4>
+                <h4>address: <small>{{member.address}}</small></h4>
+                <h4>phone: <small>{{member.phone}}</small></h4>                
+            </div>
+        </div>
+        
+	</table>
+</div>
 
-		<hr>
-
-		<!-- Footer -->
-		<footer>
-			<div class="row">
-				<div class="col-lg-20">
-					<p>Copyright &copy; Your Website 2016</p>
-				</div>
-			</div>
-			<!-- /.row -->
-		</footer>
-
-
-	<!-- /.container -->
-
-
+<hr>	
+<div class="form-group">
+<textarea rows="20" class="form-control">
+	{{members}}
+	{{paging}}
+</textarea>
+</div>
 
 </body>
-
 </html>
+
+
+
 

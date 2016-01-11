@@ -12,16 +12,20 @@
 
 <div class="table-responsive">
 	<ul class="pagination">
+	
 		<li><a href="" data-ng-click="prevClick(paging.firstPage - 1)">Prev</a></li>
-		<li data-ng-repeat="city in citys">
+		<li data-ng-repeat="store in stores">
 			<a href="" data-ng-click="pageClick(paging.firstPage + $index)">{{paging.firstPage + $index}}</a>
 		</li>
 		<li><a href="" data-ng-click="prevClick(paging.lastPage + 1)">Next</a></li>
+		
 	</ul>
 	
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr><td><a href="#/append" class="btn btn-primary">Append</a></td></tr>
+			
+			
 			<tr><th colspan="8">
 				<div data-uib-pagination 
 					 data-total-items="paging.totalItem" style="width:800px;" 
@@ -48,7 +52,8 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr data-ng-repeat="store in stores">
+			    <tr data-ng-repeat="store in stores">
+<!-- 				<tr> -->
 				<td>{{$index + 1}}</td>
 				<td><a href="#/detail/{{store.id}}">{{store.id}}</a></td>
 				<td>{{store.name}}</td>
@@ -66,6 +71,8 @@
 		</tbody>
 		
 		 <div class="col" data-ng-repeat="store in stores">            
+
+<!-- 		 <div class="col"> -->
             <div class="col-lg-4 col-sm-6 text-center">
                 <img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt="">
                 <h4>id: <small>{{store.id}}</small></h4>
@@ -83,13 +90,6 @@
 	</table>
 </div>
 
-<hr>	
-<div class="form-group">
-<textarea rows="20" class="form-control">
-	{{stores}}
-	{{paging}}
-</textarea>
-</div>
 
 </body>
 </html>

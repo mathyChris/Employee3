@@ -55,7 +55,8 @@
       <input id="submit" type="button" value="PlaceSearch">
       <input onclick="myLocatin();" type=button value="MyLocation">
      
-	  <button id="submit2" value="Hahaha" />
+<!--       <input onclick="submit2();" type=button value="Home">      -->
+	  <button id="submit2" value="Home"/>
     </div>
     
     <div id="map"></div>

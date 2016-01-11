@@ -10,6 +10,12 @@
     <property name="memberDao" ref="memberDao"/>
 </bean>
 
+<!-- LoginStoreService -->
+<bean id="loginStoreService" class="com.hybrid.service.LoginStoreService">
+    <property name="storeDao" ref="storeDao"/>
+</bean>
+
+
 <!-- CityListService -->
 <bean id="cityListService" class="com.hybrid.service.CityListService">
     <property name="cityDao" ref="cityDao"/>

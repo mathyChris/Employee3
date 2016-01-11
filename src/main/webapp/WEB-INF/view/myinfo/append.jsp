@@ -68,7 +68,7 @@
 					   required="required"
 					   data-ng-model="member.password"
 					   data-ng-maxlength="7"
-					   data-ng-minlength="7"
+					   data-ng-minlength="4"
 					   />
 				<div>memberForm.password.$invalid = {{memberForm.password.$invalid}}</div>
 				<div>memberForm.password.$error.required = {{memberForm.password.$error.required}}</div>
@@ -76,7 +76,7 @@
 				<div>memberForm.password.$error.minlength = {{memberForm.password.$error.minlength}}</div>
 				<div data-ng-show="memberForm.password.$dirty">
 					<div class="alert alert-warning" data-ng-show="memberForm.password.$error.required">필수 입력 항목입니다.</div>
-					<div class="alert alert-warning" data-ng-show="memberForm.password.$error.maxlength || cityForm.countryCode.$error.minlength">3자리만 입력가능합니다.</div>
+					<div class="alert alert-warning" data-ng-show="memberForm.password.$error.maxlength || cityForm.countryCode.$error.minlength">4자리부터 7자리까지 입력가능합니다.</div>
 				</div>	   
 			</div>
 			

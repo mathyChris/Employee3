@@ -47,6 +47,7 @@
 		</thead>
 		<tbody>
 			<tr data-ng-repeat="member in members">
+<!-- 				<tr> -->
 				<td>{{$index + 1}}</td>
 				<td><a href="#/detail/{{member.id}}">{{member.id}}</a></td>
 				<td>{{member.email}}</td>
@@ -62,6 +63,7 @@
 		</tbody>
 		
 		 <div class="col" data-ng-repeat="member in members">            
+			<div class="col">
             <div class="col-lg-4 col-sm-6 text-center">
                 <a href="http://localhost:8080/Employee2/Korean_Food/FrontGate.jsp"><img class="img-circle img-responsive img-center" src="http://placehold.it/200x200" alt=""></a>
                 <h4>id: <small>{{member.id}}</small></h4>
